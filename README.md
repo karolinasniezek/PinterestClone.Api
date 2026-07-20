@@ -16,12 +16,12 @@ This project is currently under development and will be integrated with **Pinter
 
 ## Current Status
 
--  Project setup
--  Entity Framework Core configuration
--  SQLite database
--  Database migrations
--  Dependency Injection
--  REST API development
+- Project setup
+- Entity Framework Core configuration
+- SQLite database
+- Database migrations
+- Dependency Injection
+- REST API development
 
 ## Planned
 
