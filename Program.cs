@@ -1,7 +1,6 @@
 using Pinterest.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using Pinterest.Api.Data;
-using Pinterest.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,18 +8,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=Pinterest.db"));
+    
+builder.Services.AddScoped<IPinService, PinService>();
 
-builder.Services.AddScoped<PinService>();
-
-// OpenAPI (.NET 9)
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
