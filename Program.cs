@@ -1,6 +1,7 @@
-using Pinterest.Api.Services;
 using Microsoft.EntityFrameworkCore;
 using Pinterest.Api.Data;
+using Pinterest.Api.Interfaces;
+using Pinterest.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=Pinterest.db"));
-    
+
 builder.Services.AddScoped<IPinService, PinService>();
+builder.Services.AddScoped<IUploadService, UploadService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
