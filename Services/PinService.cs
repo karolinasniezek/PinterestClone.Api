@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Pinterest.Api.Data;
+using Pinterest.Api.Interfaces;
 using Pinterest.Api.Models;
 
 namespace Pinterest.Api.Services;
