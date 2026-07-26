@@ -1,10 +1,10 @@
 # PinterestClone.Api
 
-**Work in Progress**
+Work in Progress
 
-Backend API for the **Pinterest Clone MVP** built with **ASP.NET Core Web API**.
+Backend API for the Pinterest Clone MVP built with ASP.NET Core Web API.
 
-This project is currently under development and will be integrated with **PinterestClone.Web**.
+This project is currently under development and will be integrated with PinterestClone.Web.
 
 ## Tech Stack
 
@@ -14,21 +14,48 @@ This project is currently under development and will be integrated with **Pinter
 - SQLite
 - Swagger / OpenAPI
 
-## Current Status
+## Current Features
 
-- Project setup
-- Entity Framework Core configuration
+- REST API
+- CRUD operations for Pins
+- Entity Framework Core
 - SQLite database
 - Database migrations
+- DTOs
+- Model validation
 - Dependency Injection
-- REST API development
+- Service Layer
+- Image upload
+- Static file hosting
+- Swagger documentation
 
 ## Planned
 
-- CRUD endpoints
-- DTOs & Validation
-- Frontend integration
 - JWT Authentication
+- User registration and login
+- Authorization
+- React frontend integration
 - Azure DevOps CI/CD
 - Docker
-- Unit & Integration Tests
+- Unit and Integration Tests
+
+## Project Structure
+
+```text
+Controllers/
+Data/
+DTOs/
+Interfaces/
+Migrations/
+Models/
+Services/
+wwwroot/
+```
+
+## Running the Project
+
+```bash
+dotnet restore
+dotnet ef database update
+dotnet run
+```
